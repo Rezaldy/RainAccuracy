@@ -1,21 +1,9 @@
-# RainAccuracy
+## RainAccuracy
 
----
-title: API Reference
+This Rain Accuracy meter shows the accuracy of rain forecasts on a specified times, between 2 different (or equal) specified times.
 
-language_tabs:
-- bash
-- javascript
-
-includes:
-
-search: true
-
-toc_footers:
-- <a href='http://github.com/mpociot/documentarian'>Documentation Powered by Documentarian</a>
----
 <!-- START_INFO -->
-# Info
+# API Info
 
 Welcome to the generated API reference.
 [Get Postman Collection](http://app.fluxdev.nl/docs/collection.json)
