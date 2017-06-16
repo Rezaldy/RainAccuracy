@@ -1,40 +1,232 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+RainAccuracy
+#
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+---
+title: API Reference
 
-## About Laravel
+language_tabs:
+- bash
+- javascript
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
+includes:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+search: true
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb combination of simplicity, elegance, and innovation give you tools you need to build any application with which you are tasked.
+toc_footers:
+- <a href='http://github.com/mpociot/documentarian'>Documentation Powered by Documentarian</a>
+---
+<!-- START_INFO -->
+# Info
 
-## Learning Laravel
+Welcome to the generated API reference.
+[Get Postman Collection](http://app.fluxdev.nl/docs/collection.json)
 
-Laravel has the most extensive and thorough documentation and video tutorial library of any modern web application framework. The [Laravel documentation](https://laravel.com/docs) is thorough, complete, and makes it a breeze to get started learning the framework.
+<!-- END_INFO -->
 
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 900 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
+#general
+<!-- START_bb4aba656f27b0d9612228750b56a024 -->
+## Get the last data from DB from a certain time to the end
 
-## Contributing
+> Example request:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+```bash
+curl -X GET "http://app.fluxdev.nl/api/lastData/{hour}/{minute}" \
+-H "Accept: application/json"
+```
 
-## Security Vulnerabilities
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://app.fluxdev.nl/api/lastData/{hour}/{minute}",
+    "method": "GET",
+    "headers": {
+        "accept": "application/json"
+    }
+}
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
 
-## License
+> Example response:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+```json
+[
+	"12:50:00",
+	"12:55:00",
+	"13:00:00",
+	"13:05:00",
+	"13:10:00",
+	"13:20:00",
+	"13:25:00",
+	"13:30:00",
+	"13:35:00",
+	"13:40:00",
+	"13:45:00",
+	"13:50:00",
+	"13:55:00",
+	"14:00:00",
+	"14:05:00",
+	"14:10:00",
+	"14:15:00",
+	"14:25:00",
+	"14:35:00",
+	"14:40:00",
+	"14:45:00",
+	"14:50:00",
+	"14:55:00",
+	"15:00:00",
+	"15:05:00",
+	"15:10:00",
+	"15:15:00",
+	"15:30:00",
+	"15:35:00",
+	"15:55:00",
+	"16:05:00",
+	"16:15:00",
+	"16:25:00",
+	"16:30:00",
+	"16:40:00",
+	"16:45:00"
+]
+```
+
+### HTTP Request
+`GET api/lastData/{hour}/{minute}`
+
+`HEAD api/lastData/{hour}/{minute}`
+
+
+<!-- END_bb4aba656f27b0d9612228750b56a024 -->
+
+<!-- START_7d53e4f6398291d7dc2392ba089af683 -->
+## Compare two data and return intersecting times
+
+> Example request:
+
+```bash
+curl -X GET "http://app.fluxdev.nl/api/intersectData/{hour1}/{minute1}/{hour2}/{minute2}" \
+-H "Accept: application/json"
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://app.fluxdev.nl/api/intersectData/{hour1}/{minute1}/{hour2}/{minute2}",
+    "method": "GET",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+> Example response:
+
+```json
+{
+	14:00: {
+		rainAmount: "000",
+		time: "14:00"
+	},
+	14:05: {
+		rainAmount: "000",
+		time: "14:05"
+	},
+	14:10: {
+		rainAmount: "000",
+		time: "14:10"
+	},
+	14:15: {
+		rainAmount: "000",
+		time: "14:15"
+	},
+	14:20: {
+		rainAmount: "000",
+		time: "14:20"
+	},
+	14:25: {
+		rainAmount: "000",
+		time: "14:25"
+	},
+	14:30: {
+		rainAmount: "000",
+		time: "14:30"
+	},
+	14:35: {
+		rainAmount: "000",
+		time: "14:35"
+	},
+	14:40: {
+		rainAmount: "000",
+		time: "14:40"
+	},
+	14:45: {
+		rainAmount: "000",
+		time: "14:45"
+	}
+}
+```
+
+### HTTP Request
+`GET api/intersectData/{hour1}/{minute1}/{hour2}/{minute2}`
+
+`HEAD api/intersectData/{hour1}/{minute1}/{hour2}/{minute2}`
+
+
+<!-- END_7d53e4f6398291d7dc2392ba089af683 -->
+
+<!-- START_b77feb7ab94b9ffa9d8bc2de889f6900 -->
+## api/data/{hour1}/{minute1}/{hour2}/{minute2}/{hourIntersect}/{minuteIntersect}
+
+> Example request:
+
+```bash
+curl -X GET "http://app.fluxdev.nl/api/data/{hour1}/{minute1}/{hour2}/{minute2}/{hourIntersect}/{minuteIntersect}" \
+-H "Accept: application/json"
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://app.fluxdev.nl/api/data/{hour1}/{minute1}/{hour2}/{minute2}/{hourIntersect}/{minuteIntersect}",
+    "method": "GET",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+> Example response:
+
+```json
+{
+        early: {
+                rainAmount: "000",
+                time: "13:00"
+        },
+        late: {
+                rainAmount: "000",
+                time: "13:00"
+        }
+}
+```
+
+### HTTP Request
+`GET api/data/{hour1}/{minute1}/{hour2}/{minute2}/{hourIntersect}/{minuteIntersect}`
+
+`HEAD api/data/{hour1}/{minute1}/{hour2}/{minute2}/{hourIntersect}/{minuteIntersect}`
+
+
+<!-- END_b77feb7ab94b9ffa9d8bc2de889f6900 -->
