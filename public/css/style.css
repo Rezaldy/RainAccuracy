@@ -1,0 +1,78 @@
+.menu {
+    position:relative;
+}
+
+.comparisons, .result {
+    display: none;
+}
+
+.timeBlock {
+    margin-top:20px;
+}
+
+.menu-item{
+    float:left;
+}
+
+.center {
+    text-align:center;
+}
+
+.timeRow:first-of-type {
+    margin:10px 0;
+}
+
+.timeRow {
+    margin-bottom: 10px;
+}
+
+.possibleTime {
+    background: #1249d3;
+    color: white;
+    width:100%;
+    text-align:center;
+    cursor:pointer;
+    margin-bottom:0;
+    border-radius:10px;
+    transition: all 0.2s ease-in-out;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.times > div {
+    margin: 10px 0;
+}
+
+.possibleTimes {
+    display: none;
+}
+
+.possibleTime:hover {
+    background-color: #213db2;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+}
+
+.possibleTime input[type="radio"]{
+    display:none;
+}
+
+.possibleTime.selected {
+    background-color:#03a04c;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+}
+
+.border-left {
+    border-left:1px solid #eee;
+}
+
+.result {
+    margin-top: 20px;
+}
+
+.compareTo {
+    display: none;
+}
